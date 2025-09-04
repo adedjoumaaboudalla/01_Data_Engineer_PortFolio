@@ -1,0 +1,501 @@
+name,age,salary,join_date,job_title
+Jane SMITH,,,2020-11-24,Data scientst
+BOB,119.0,,,Data Scientist
+charles,29.0,30221.02765198487,2020-6-28,analyst
+Jane SMITH,,81851.97523642461,3/1/2022,ENGINEER
+frank,,103320.0,22/5/2022,manager
+BOB,,,,data scientist
+Jane SMITH,,85543.866529488,2022-27-9,MANAGER
+frank,,67447.0,,MANAGER
+Jane SMITH,,,2020-27-5,ENGINEER
+charles,101.0,,25/3/2022,Ingénieur
+Eve,31.0,98504.0,2020-6-27,ENGINEER
+   lucy,7.0,,28/10/2021,data scientist
+frank,,87839.0,2020-2-11,ENGINEER
+john  doe,48.0,24117.0,,Data scientst
+   lucy,94.0,29693.081422882333,,Data Scientist
+Jane SMITH,53.0,44931.0,2021-3-9,manager
+john  doe,13.0,60641.4057952472,2021-18-8,analyst
+N/A,114.0,44890.0,,manager
+N/A,30.0,86562.0,2020-10-3,MANAGER
+Jane SMITH,,,2022-19-8,ENGINEER
+john  doe,107.0,,2021-15-8,MANAGER
+N/A,,106951.0,24/9/2020,Data Scientist
+BOB,,52914.0,2020-20-3,Ingénieur
+   lucy,,93519.0,2/6/2022,engineer
+charles,83.0,66898.0,25/9/2021,Ingénieur
+frank,-4.0,112448.72952415457,2022-12-26,Analyste
+BOB,,65830.0,2021-12-5,manager
+frank,,31534.175185142758,2021-21-12,analyst
+Omar,120.0,70488.0,,ENGINEER
+Eve,,,22/7/2021,Data scientst
+frank,87.0,76910.52548658094,,Analyste
+BOB,,116463.0,2020-17-11,Data scientst
+BOB,27.0,44484.25440783502,,Data scientst
+   Alice   ,-9.0,,2021-14-8,Analyste
+Omar,,91810.0,9/4/2022,data scientist
+   lucy,,47171.510708218455,5/4/2021,ENGINEER
+frank,,91121.0,,engineer
+Eve,,,,Data Scientist
+frank,,,,Ingénieur
+john  doe,,41166.02842114815,2021-7-9,Data Scientist
+BOB,7.0,118858.0,5/4/2020,Analyste
+charles,84.0,,2020-28-1,MANAGER
+frank,91.0,,2020-2-23,Data Scientist
+N/A,,70596.07896770778,16/2/2021,analyst
+   Alice   ,,,2021-8-14,data scientist
+   lucy,,81033.17042305207,2021-16-6,Data Scientist
+charles,,92848.0,,Analyste
+john  doe,,49045.0,2022-21-7,Data Scientist
+   lucy,,,,data scientist
+Omar,,103262.8363327068,2020-6-6,engineer
+N/A,64.0,106846.1197262944,2020-1-19,data scientist
+   lucy,19.0,,2022-11-2,manager
+frank,145.0,58037.80261465494,10/10/2022,data scientist
+Jane SMITH,30.0,42782.0,2021-11-4,data scientist
+   lucy,8.0,,7/7/2020,data scientist
+   Alice   ,8.0,,,data scientist
+N/A,,77377.0,2021-12-11,data scientist
+Omar,0.0,71896.3840987604,,Data Scientist
+Eve,16.0,61164.50897877937,2021-12-6,Data Scientist
+Jane SMITH,93.0,106936.74843206523,17/6/2022,data scientist
+N/A,,108084.66173578055,2020-1-21,manager
+frank,13.0,34871.0,,Analyste
+BOB,106.0,,2021-20-9,engineer
+charles,,64654.739304319446,25/9/2021,MANAGER
+frank,,51817.63272337998,2021-11-3,ENGINEER
+   lucy,,92244.38275706426,2022-3-3,Data Scientist
+N/A,,91871.7425222983,2022-1-20,analyst
+Jane SMITH,,41805.0,2/5/2021,manager
+frank,134.0,,2020-17-8,Analyste
+charles,,57700.0,2021-18-8,Data scientst
+frank,113.0,58136.4297657629,2022-5-23,MANAGER
+   lucy,63.0,99569.0,2022-4-20,engineer
+charles,102.0,95965.0,2020-14-9,manager
+N/A,59.0,111404.8953538312,,manager
+Eve,,21824.0,2022-22-11,ENGINEER
+BOB,110.0,,,ENGINEER
+   Alice   ,1.0,59893.0,5/7/2021,analyst
+Jane SMITH,,23271.62868550469,2022-21-9,engineer
+frank,60.0,114901.07882621376,21/11/2022,Ingénieur
+Omar,42.0,92641.0,2021-14-3,Ingénieur
+Jane SMITH,-4.0,21947.0,2022-6-1,ENGINEER
+   lucy,,79366.60178680271,2022-4-20,engineer
+   lucy,,,2020-14-5,analyst
+Omar,,70555.10744856804,,Data scientst
+frank,,72262.0,2021-7-11,ENGINEER
+Jane SMITH,100.0,117594.0,2022-13-7,analyst
+john  doe,,,2020-3-22,data scientist
+Omar,,,18/1/2022,data scientist
+charles,,20800.0,3/3/2022,analyst
+frank,,,2021-10-20,data scientist
+   lucy,,64204.418669777915,2021-28-8,engineer
+BOB,91.0,21007.0,11/2/2020,analyst
+N/A,,,,analyst
+charles,,22733.0,,MANAGER
+frank,124.0,,25/3/2020,Data Scientist
+Eve,27.0,33474.0,,MANAGER
+Omar,,63976.2816341864,2021-11-10,data scientist
+   lucy,105.0,56873.75994898128,,MANAGER
+N/A,,85183.74546486099,2022-8-17,manager
+   Alice   ,0.0,63775.827430923295,2021-22-7,MANAGER
+john  doe,75.0,,24/11/2022,Data Scientist
+charles,90.0,97993.0,,manager
+Eve,,60483.0,2021-8-7,Data Scientist
+Omar,,,2021-17-8,Analyste
+BOB,126.0,116559.66371940364,,Ingénieur
+BOB,144.0,25217.980326100456,2021-12-3,Analyste
+N/A,,32021.0,,ENGINEER
+Eve,47.0,,5/3/2020,Analyste
+   lucy,147.0,30384.0,2020-19-4,ENGINEER
+john  doe,,99389.91086394382,16/10/2022,Ingénieur
+charles,99.0,,2021-3-22,analyst
+   lucy,,68929.0,2022-13-10,Ingénieur
+john  doe,,,2020-24-1,Data scientst
+john  doe,41.0,,2021-9-16,Data Scientist
+charles,,,2021-21-9,ENGINEER
+frank,,98964.0,,MANAGER
+frank,,,9/11/2020,engineer
+   Alice   ,,24561.0,,Data Scientist
+Eve,103.0,33769.51078285268,,manager
+Jane SMITH,,,,ENGINEER
+Eve,78.0,74217.13612255623,2020-12-23,Data scientst
+   Alice   ,,,,Analyste
+N/A,,27375.071291123902,15/11/2022,Ingénieur
+frank,118.0,71810.21329240163,2022-19-2,Data scientst
+N/A,60.0,,2020-15-11,MANAGER
+john  doe,-3.0,,2022-10-8,data scientist
+   lucy,,,14/8/2021,Data Scientist
+Eve,,,8/8/2020,ENGINEER
+john  doe,,100658.0,,data scientist
+   lucy,-5.0,71543.0,2020-10-12,ENGINEER
+frank,,56577.763977540104,2020-21-9,ENGINEER
+frank,,,2021-20-9,Ingénieur
+BOB,,85546.0,26/8/2022,Data Scientist
+Omar,71.0,,,engineer
+Eve,74.0,,20/8/2021,engineer
+Omar,112.0,,2021-3-27,Analyste
+Eve,97.0,89050.02609185255,28/12/2022,manager
+Eve,,115668.54921965481,,Data scientst
+BOB,,114148.55463274613,2021-25-6,data scientist
+Jane SMITH,,71712.0,,Data scientst
+BOB,,93664.0,19/4/2020,engineer
+Jane SMITH,,,6/7/2022,data scientist
+Eve,63.0,31725.0,,Analyste
+   Alice   ,64.0,,,data scientist
+BOB,,,1/12/2021,Ingénieur
+Omar,,52792.6658740176,,Data scientst
+   lucy,,,2020-13-8,Ingénieur
+frank,,31741.574584477632,2020-24-12,analyst
+N/A,110.0,,2020-9-15,manager
+N/A,41.0,,,engineer
+   lucy,,,10/12/2020,MANAGER
+Jane SMITH,,,,Data Scientist
+frank,,,28/6/2020,Data scientst
+john  doe,,,2021-21-3,Data scientst
+Jane SMITH,,100599.0,2020-4-3,analyst
+   lucy,49.0,118878.0,2021-28-10,Data scientst
+charles,26.0,74206.0,2022-10-24,Data Scientist
+frank,,111266.0,25/9/2021,Analyste
+john  doe,,74592.0,2021-4-9,manager
+BOB,,,,Data scientst
+Eve,67.0,,16/4/2022,manager
+Eve,,73365.0127416263,17/8/2021,Data Scientist
+Eve,95.0,,18/10/2022,Data scientst
+Eve,,103336.27152869852,11/5/2021,Data Scientist
+   Alice   ,,,2/2/2022,Data scientst
+Jane SMITH,28.0,70573.2919693065,2020-10-21,manager
+N/A,95.0,72941.76468416506,2022-5-1,manager
+   Alice   ,51.0,72645.59854002163,12/7/2021,data scientist
+Jane SMITH,-2.0,,2020-25-7,MANAGER
+Jane SMITH,125.0,,2022-8-9,Ingénieur
+Eve,-6.0,,2022-22-11,analyst
+   Alice   ,,27038.0,2021-20-1,Analyste
+   lucy,,114114.28449707254,2020-11-19,ENGINEER
+charles,,113280.0,2020-19-8,data scientist
+Jane SMITH,23.0,,2021-27-2,analyst
+john  doe,,,2021-15-3,data scientist
+charles,116.0,36720.740075913265,,MANAGER
+Omar,,34021.0,20/7/2021,data scientist
+Eve,144.0,51418.32811954414,,data scientist
+frank,83.0,,2021-16-8,ENGINEER
+frank,117.0,50283.26425106909,,manager
+N/A,97.0,,2022-11-3,MANAGER
+frank,,21054.777278457997,,Data Scientist
+frank,108.0,119770.27254146534,2020-21-5,Analyste
+BOB,,67616.25312091634,2020-13-1,ENGINEER
+   Alice   ,52.0,,,analyst
+john  doe,147.0,79220.31583603684,7/5/2022,Data Scientist
+Eve,,46235.33954523609,2021-28-2,Data Scientist
+   lucy,148.0,90598.83609459801,2022-10-3,Ingénieur
+Eve,,,16/11/2022,Analyste
+charles,25.0,,,analyst
+   lucy,,,,MANAGER
+   lucy,130.0,,,ENGINEER
+BOB,66.0,78947.0,2022-28-12,MANAGER
+frank,32.0,47082.0,2020-20-12,data scientist
+Omar,58.0,116277.19949937919,2020-17-3,Data scientst
+frank,115.0,,2021-26-12,Data Scientist
+   lucy,,,,Data scientst
+frank,,52286.51495899529,2021-9-19,Analyste
+john  doe,21.0,65651.81359699064,2021-12-11,data scientist
+Jane SMITH,85.0,59634.15669322332,8/7/2022,Analyste
+Jane SMITH,23.0,88084.0,2020-12-11,Data scientst
+frank,12.0,51335.14774409062,2020-7-25,MANAGER
+   Alice   ,,,2020-7-20,MANAGER
+frank,,61222.0,2021-11-3,data scientist
+BOB,122.0,,2020-4-16,Data Scientist
+Eve,,,2022-12-1,Data scientst
+john  doe,,,23/7/2020,data scientist
+Jane SMITH,69.0,87017.0,,Data scientst
+john  doe,52.0,,2022-1-10,Ingénieur
+john  doe,,,2022-13-1,analyst
+charles,124.0,,15/9/2021,Data Scientist
+   Alice   ,55.0,95223.0,2020-11-8,analyst
+   Alice   ,35.0,,2022-11-14,MANAGER
+Eve,20.0,,,engineer
+Eve,,,12/10/2021,engineer
+frank,-4.0,,25/11/2021,manager
+BOB,,27850.0,2022-5-3,MANAGER
+Jane SMITH,119.0,103521.0,2020-19-5,analyst
+Eve,,55645.0,,ENGINEER
+N/A,81.0,50830.771821250455,2022-11-4,Ingénieur
+Jane SMITH,,,6/1/2021,ENGINEER
+   lucy,16.0,35919.0,2022-12-10,ENGINEER
+john  doe,6.0,104670.0,,Analyste
+john  doe,,42650.0,2022-17-11,Analyste
+frank,,28772.155105900747,,Data Scientist
+   lucy,,,2022-17-1,engineer
+   lucy,,96544.0,,Data Scientist
+   Alice   ,35.0,,1/12/2022,MANAGER
+BOB,,43010.0,8/1/2022,Ingénieur
+Eve,,,,MANAGER
+Jane SMITH,,62284.0,2021-15-12,Data scientst
+Omar,,93399.49733652058,1/12/2022,MANAGER
+Eve,146.0,76555.02461203205,2020-6-24,Data Scientist
+   lucy,,47483.0,,Ingénieur
+frank,,66036.0,2021-10-21,data scientist
+john  doe,,33726.0,2021-3-24,analyst
+   Alice   ,,25355.57426605955,2022-27-5,data scientist
+BOB,14.0,77176.98078577415,2020-1-12,engineer
+BOB,,30739.0,16/11/2021,Data Scientist
+frank,84.0,24461.69246978757,2021-5-8,ENGINEER
+Eve,,,17/7/2022,Analyste
+charles,,,20/3/2020,Data scientst
+   Alice   ,,118827.99363369157,,manager
+frank,,56202.0,2022-10-19,ENGINEER
+Omar,,108013.57846250322,2021-11-3,analyst
+   Alice   ,,59579.27442310318,2021-10-6,data scientist
+charles,115.0,,,Data scientst
+frank,,27367.0,17/7/2020,Data scientst
+BOB,4.0,65644.86671280806,2022-4-9,Data scientst
+Eve,,116052.03782802877,2022-9-12,analyst
+john  doe,31.0,,14/9/2020,Ingénieur
+Omar,-8.0,80834.38828966435,9/7/2021,Analyste
+charles,,,2022-6-18,Analyste
+Jane SMITH,,52513.70702795058,2021-11-23,MANAGER
+frank,71.0,22545.527112037358,13/7/2022,Data Scientist
+BOB,,55849.7131670377,2021-14-12,manager
+   Alice   ,75.0,,2021-7-26,Analyste
+john  doe,139.0,,17/5/2021,Data Scientist
+frank,,,,data scientist
+BOB,33.0,84169.0,2020-10-14,engineer
+N/A,,,2020-17-12,data scientist
+   Alice   ,,85973.0,,Ingénieur
+Eve,,38842.603389086944,24/3/2020,ENGINEER
+Eve,,,2022-1-20,analyst
+   lucy,87.0,,2020-4-23,manager
+charles,149.0,74896.0,4/5/2020,data scientist
+N/A,,112200.0,2020-9-16,ENGINEER
+Jane SMITH,,,2020-24-5,Analyste
+john  doe,15.0,105224.86857367096,24/2/2020,Data Scientist
+Eve,,29295.13154374223,13/8/2021,ENGINEER
+   Alice   ,5.0,,2021-10-22,Ingénieur
+   lucy,114.0,73907.0,1/12/2022,Data Scientist
+N/A,123.0,76734.0,2021-6-22,engineer
+   Alice   ,,84990.0,,analyst
+BOB,,100126.12877267221,,analyst
+john  doe,132.0,,2022-24-6,engineer
+BOB,,,12/12/2021,engineer
+Eve,,,2022-23-2,MANAGER
+BOB,38.0,71497.0,,Analyste
+Omar,119.0,,27/10/2021,Ingénieur
+Jane SMITH,,108139.05670096177,8/5/2021,Ingénieur
+frank,,74780.59713595177,2020-19-11,Ingénieur
+   Alice   ,,31540.52522836254,,engineer
+N/A,17.0,,2020-4-9,data scientist
+BOB,128.0,67013.0,18/4/2022,manager
+charles,,,2020-24-4,MANAGER
+N/A,144.0,116428.98231260307,,engineer
+frank,,36092.88497566137,2020-6-15,MANAGER
+charles,,98403.14485705014,,ENGINEER
+Eve,46.0,53188.35149039815,2022-10-2,Analyste
+BOB,147.0,88255.1360768528,2021-10-9,manager
+N/A,,,2020-6-17,Data scientst
+BOB,98.0,,,Data Scientist
+john  doe,12.0,37799.21635554342,,analyst
+Eve,,108250.0,2022-12-20,data scientist
+charles,145.0,96527.42410204625,22/1/2021,analyst
+N/A,65.0,,,manager
+N/A,,,2020-15-4,Data scientst
+Jane SMITH,36.0,,3/5/2022,MANAGER
+   lucy,,36805.0,2021-24-6,MANAGER
+   Alice   ,,61462.0,2022-23-5,Ingénieur
+Eve,,55874.160211359675,6/11/2022,data scientist
+Jane SMITH,9.0,,,Ingénieur
+Eve,90.0,93322.6827212901,17/2/2021,MANAGER
+   Alice   ,121.0,,5/12/2022,Analyste
+BOB,,,2021-11-1,ENGINEER
+N/A,,95842.0,,Data scientst
+N/A,,68686.15626741757,2020-12-9,Data scientst
+   Alice   ,37.0,67477.0,,Analyste
+BOB,141.0,104837.0,19/10/2020,engineer
+   Alice   ,56.0,,,MANAGER
+   lucy,113.0,,25/3/2022,Data Scientist
+   lucy,142.0,50122.0,2020-1-7,Ingénieur
+   lucy,147.0,89655.0,,Data Scientist
+john  doe,,113842.16278962804,26/12/2022,data scientist
+   lucy,49.0,,2021-5-7,manager
+john  doe,86.0,100428.71528558561,,MANAGER
+Eve,,109208.0,,data scientist
+charles,,112470.0,,Data Scientist
+N/A,147.0,,2021-12-2,Data scientst
+Eve,10.0,58432.6010426022,,Analyste
+john  doe,,,8/10/2020,engineer
+   Alice   ,,55312.7663356528,2022-12-2,manager
+Omar,,56242.0,2021-7-19,manager
+charles,77.0,,,Analyste
+Omar,,45781.97648194004,2022-4-22,data scientist
+BOB,63.0,87369.79167818138,16/6/2021,Data scientst
+   lucy,41.0,44205.651784496375,2020-4-7,ENGINEER
+   lucy,147.0,115799.30904676253,2021-15-9,analyst
+BOB,137.0,72573.54438250506,2021-9-2,manager
+   lucy,70.0,87410.30604448347,12/10/2021,data scientist
+   lucy,,38391.367419637754,25/6/2021,MANAGER
+   Alice   ,137.0,33090.0,2022-7-28,Ingénieur
+frank,117.0,,9/9/2022,engineer
+BOB,,,,ENGINEER
+Eve,145.0,,,ENGINEER
+frank,,80784.0,2020-11-26,ENGINEER
+   Alice   ,77.0,51687.82416955612,,analyst
+   Alice   ,37.0,,2021-12-23,ENGINEER
+   lucy,130.0,,20/3/2020,Data scientst
+charles,103.0,37206.0,,Ingénieur
+N/A,,,21/9/2021,ENGINEER
+   lucy,,45980.70439377244,2020-1-17,Analyste
+   lucy,66.0,,12/4/2021,Ingénieur
+frank,86.0,,2022-18-5,analyst
+BOB,7.0,,2021-10-15,Ingénieur
+john  doe,126.0,117233.2604991447,2021-3-23,Analyste
+BOB,,98572.53387530323,2020-14-1,analyst
+Jane SMITH,,39219.22929264528,2021-1-4,Data scientst
+   lucy,14.0,58912.29605782204,2022-26-2,Analyste
+charles,,26827.0,2020-4-21,analyst
+BOB,-8.0,98347.52402510599,2020-25-2,engineer
+john  doe,81.0,111924.0,11/9/2022,engineer
+frank,81.0,109866.30442700426,10/9/2022,manager
+Eve,,,2021-18-9,Analyste
+john  doe,,116161.0,,Data scientst
+N/A,117.0,48312.908353358536,4/9/2022,engineer
+BOB,,,2022-7-22,Data Scientist
+BOB,145.0,21715.0,,Data Scientist
+john  doe,,89339.0,,Data scientst
+BOB,124.0,94714.0,,analyst
+Jane SMITH,32.0,60155.717361489515,2021-27-6,analyst
+frank,72.0,74562.62395823607,2022-12-9,data scientist
+Omar,-6.0,59562.0,25/12/2021,ENGINEER
+john  doe,,33840.819347640994,9/5/2020,ENGINEER
+Eve,113.0,,,ENGINEER
+john  doe,,76925.0,2022-22-1,manager
+john  doe,71.0,62838.0,2020-1-22,Data scientst
+frank,,39400.0,,Ingénieur
+   Alice   ,113.0,,,Data Scientist
+Omar,12.0,61358.20524658307,2020-19-3,MANAGER
+   lucy,149.0,77732.0,5/12/2020,data scientist
+john  doe,77.0,59992.0,,MANAGER
+   Alice   ,,,,engineer
+Jane SMITH,,,2021-2-1,Data Scientist
+   lucy,142.0,39887.520000823446,,Ingénieur
+john  doe,,66580.0,2021-10-9,Data scientst
+   Alice   ,,,20/11/2022,analyst
+charles,,78873.0,18/11/2020,analyst
+   Alice   ,134.0,,,data scientist
+   lucy,60.0,44632.0,9/10/2022,Data scientst
+john  doe,81.0,110196.0,,Ingénieur
+   Alice   ,39.0,24224.0,,MANAGER
+   lucy,,52346.0,2022-12-27,manager
+Jane SMITH,,25559.0,2022-9-13,Data scientst
+charles,,97367.70125301256,,Analyste
+Jane SMITH,118.0,,14/6/2021,Analyste
+Jane SMITH,,,2022-24-11,ENGINEER
+N/A,88.0,69634.0,2020-6-19,analyst
+charles,,57851.0,2020-4-1,MANAGER
+   lucy,50.0,85947.06213154792,20/10/2020,engineer
+   Alice   ,27.0,105626.0,2020-11-19,analyst
+   Alice   ,,,2022-10-26,ENGINEER
+charles,,102026.47422825296,,manager
+BOB,43.0,,2022-19-7,data scientist
+N/A,,81428.99808483894,2022-17-12,Data scientst
+john  doe,20.0,80933.0,20/7/2021,engineer
+BOB,,,2022-6-25,Ingénieur
+BOB,,67910.82733583677,,analyst
+john  doe,,92496.41543492497,7/10/2022,data scientist
+john  doe,,102118.0,2022-10-13,data scientist
+frank,,57158.35768871481,,manager
+john  doe,113.0,54011.5904239094,25/6/2020,Data scientst
+john  doe,,113543.0,2020-5-2,manager
+charles,,109213.55844277567,9/9/2021,Ingénieur
+charles,19.0,101650.0,18/6/2021,Ingénieur
+Jane SMITH,,90854.0,,Ingénieur
+Omar,,55562.43130001474,2020-12-25,Analyste
+Jane SMITH,,84441.86099634759,2021-22-3,Data Scientist
+   lucy,114.0,67533.43620366383,2021-8-28,analyst
+Jane SMITH,73.0,73274.55659283313,2022-7-8,Data Scientist
+BOB,,76721.11942419913,2022-12-8,MANAGER
+Omar,,29765.390919166093,,engineer
+Jane SMITH,45.0,,,Data scientst
+BOB,,,12/2/2022,data scientist
+john  doe,84.0,90335.41244270671,2022-28-7,analyst
+frank,,91449.0,18/7/2021,Ingénieur
+john  doe,8.0,92133.92323619773,,MANAGER
+   Alice   ,,102007.14249167276,14/10/2020,manager
+charles,,,2022-12-3,Analyste
+N/A,10.0,,2022-11-3,Data Scientist
+N/A,,71266.31103907159,2021-15-1,MANAGER
+charles,,95778.0,24/10/2020,manager
+Jane SMITH,,81579.7760195821,,Data Scientist
+   Alice   ,56.0,,5/10/2020,Analyste
+   Alice   ,,27120.0,,analyst
+   lucy,57.0,89526.0,2022-11-2,analyst
+Omar,,55432.0,13/8/2022,manager
+Eve,,91776.0,4/9/2020,data scientist
+charles,39.0,23106.0,7/10/2022,analyst
+Omar,37.0,38426.29928390363,21/8/2021,ENGINEER
+charles,,70933.0,,ENGINEER
+   Alice   ,,48624.0,2020-28-12,Analyste
+john  doe,117.0,105572.0,,Analyste
+frank,93.0,42584.684195598486,2022-8-4,ENGINEER
+Eve,,104118.15871271442,,ENGINEER
+Eve,114.0,102941.0,2020-1-7,manager
+charles,,22151.0,13/2/2020,MANAGER
+BOB,8.0,,2/4/2022,engineer
+charles,,,,Data Scientist
+frank,73.0,109664.0,2021-12-2,Ingénieur
+frank,,92536.0,,ENGINEER
+john  doe,-9.0,,2020-16-3,manager
+   lucy,95.0,42878.0,,engineer
+N/A,50.0,35401.0,25/9/2022,data scientist
+john  doe,39.0,88524.37544150776,22/1/2020,analyst
+charles,,25677.0,26/1/2021,Analyste
+Omar,,,,Data scientst
+frank,46.0,81733.0,,Data scientst
+Eve,59.0,,2021-23-3,Data scientst
+charles,144.0,103623.0,,Analyste
+charles,,116492.0,2021-7-19,engineer
+   lucy,119.0,73112.17262917769,,Data scientst
+   Alice   ,,51334.0,2020-8-22,Analyste
+   lucy,,98985.87127890572,2020-22-12,manager
+john  doe,,,2022-10-26,manager
+Eve,3.0,,6/11/2022,Ingénieur
+Eve,51.0,,,data scientist
+john  doe,,,2022-19-8,ENGINEER
+BOB,107.0,30508.0,6/5/2020,Data scientst
+N/A,150.0,,12/7/2021,ENGINEER
+john  doe,,,,data scientist
+Omar,,42509.0,25/1/2020,MANAGER
+   Alice   ,,,5/3/2020,Analyste
+charles,84.0,46890.0,2022-15-9,ENGINEER
+john  doe,,114778.9054051345,2022-19-8,MANAGER
+   Alice   ,,,22/9/2020,Analyste
+Eve,,27213.0,,ENGINEER
+N/A,90.0,,,Data Scientist
+john  doe,,50808.534456434565,24/8/2022,analyst
+frank,25.0,40778.37907018597,2020-23-11,analyst
+   Alice   ,,113093.0,2021-11-5,Analyste
+N/A,108.0,23517.0,27/11/2021,Analyste
+BOB,-3.0,56335.0,,ENGINEER
+Eve,121.0,54018.0,2020-11-5,analyst
+Eve,,58228.0,2022-15-9,Data Scientist
+charles,,73442.03232232231,17/5/2021,ENGINEER
+BOB,29.0,,,ENGINEER
+Jane SMITH,23.0,,2021-15-12,engineer
+Jane SMITH,46.0,110995.0,2021-3-7,Analyste
+frank,0.0,,2022-10-2,ENGINEER
+Jane SMITH,144.0,97018.0,2021-28-6,Ingénieur
+N/A,146.0,86179.0,2022-1-17,ENGINEER
+BOB,,68033.0,6/6/2021,analyst
+Jane SMITH,70.0,81066.0,,ENGINEER
+frank,,,2020-12-8,Ingénieur
+john  doe,115.0,,5/7/2021,ENGINEER
+Eve,,79496.08299436382,2021-28-10,analyst
+Eve,,83508.0,2021-2-4,engineer
+Jane SMITH,117.0,,,Data scientst
+charles,,46166.52737739541,2020-22-8,analyst
+   lucy,107.0,,2021-12-6,MANAGER
+   lucy,,82378.0,2021-21-5,engineer
+john  doe,141.0,103693.41519952573,2021-13-7,Data Scientist
+frank,79.0,106670.0,3/12/2020,engineer
+N/A,73.0,85776.77865577379,2021-28-1,analyst
+Omar,,29772.56730819237,2022-20-3,Data Scientist
+frank,,103288.0,2022-4-10,MANAGER
+Jane SMITH,,,,manager
