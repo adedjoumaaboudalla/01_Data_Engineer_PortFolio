@@ -10,9 +10,13 @@ Ce dossier contient des projets et scripts liés à **l’ingestion de données*
   - `ingestion_demo.ipynb` → démonstration interactive du processus d’ingestion.
 
 ### Prerequis
+  - Ajouter votre clé GOOGLE_APPLICATION_CREDENTIALS comme suit
+    - Windows : setx GOOGLE_APPLICATION_CREDENTIALS "Chemin_vers_la_cle_json"
+    - Mac / Linux :export GOOGLE_APPLICATION_CREDENTIALS="Chemin_vers_la_cle_json"
+
   - Ajouter votre clé omdbapi comme suit
-  - Windows : setx OMDB_API_KEY "votre_secret"
-  - Mac / Linux :export OMDB_API_KEY="votre_secret"
+    - Windows : setx OMDB_API_KEY "votre_secret"
+    - Mac / Linux :export OMDB_API_KEY="votre_secret"
 
 ## Compétences mises en avant
 - Lecture et ingestion de données (CSV, API).
