@@ -55,3 +55,4 @@ build/
 dist/
 *.whl
 
+p04_data_orchestration/.env
