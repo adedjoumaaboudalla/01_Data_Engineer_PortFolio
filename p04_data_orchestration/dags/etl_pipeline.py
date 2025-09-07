@@ -58,7 +58,7 @@ default_arguments = {
 }
 
 
-with DAG(dag_id="Pokemon_Story", default_args=default_arguments, schedule_interval="*0 0,12 * * *") as dag:
+with DAG(dag_id="Pokemon_Story", default_args=default_arguments, schedule_interval="0 0,12 * * *") as dag:
     
     # 0. Appel de la fonction getAllPokemonMovies
     get_moovies_task = PythonOperator(task_id= "get_moovies_task", python_callable= getAllPokemonMovies)
