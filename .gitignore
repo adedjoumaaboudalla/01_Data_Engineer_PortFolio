@@ -1,0 +1,55 @@
+airflow-webserver.pid
+airflow.db
+
+# 🔐 Clés et secrets
+*.json              # Clés GCP, AWS, etc.
+.env                # Variables d’environnement
+*.key               # Clés Fernet, SSH…
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+*.sqlite3
+*.db
+*.bak
+
+# 📦 Environnements virtuels
+venv/
+.env/
+.envrc/
+*.lock
+
+# 📊 Notebooks
+.ipynb_checkpoints/
+
+# 🧪 Tests et cache
+.tox/
+.nox/
+.coverage
+.pytest_cache/
+
+# 📁 Airflow
+logs/
+dags/__pycache__/
+airflow.cfg
+unittest.cfg
+*.airflowignore
+
+# 🐳 Docker
+*.pid
+*.sock
+*.tar
+*.gz
+
+# 🧠 IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# 📦 Build
+build/
+dist/
+*.whl
+
