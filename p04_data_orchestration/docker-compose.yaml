@@ -1,0 +1,45 @@
+services:
+  airflow-webserver:
+    image: apache/airflow:2.7.3  # <-- prends une version stable !
+    restart: always
+    environment:
+      - PYTHONPATH=/opt/airflow
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__FERNET_KEY=5q0UGB0TagOuJ9Oqw9hZ352MlAV7jW0EBOwkDs2JBKo=
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/p04_data_orchestration/dags
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__TEST_CONNECTION=Enabled
+    volumes:
+      - ../../01_Data_Engineer_Portfolio:/opt/airflow
+      - ./requirements.txt:/requirements.txt
+    ports:
+      - "8080:8080"
+    command: webserver
+
+  airflow-scheduler:
+    image: apache/airflow:2.7.3
+    restart: always
+    depends_on:
+      - airflow-webserver
+    environment:      
+      - PYTHONPATH=/opt/airflow
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__FERNET_KEY=5q0UGB0TagOuJ9Oqw9hZ352MlAV7jW0EBOwkDs2JBKo=
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/p04_data_orchestration/dags
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__TEST_CONNECTION=Enabled
+    volumes:
+      - ../../01_Data_Engineer_Portfolio:/opt/airflow
+      - ./requirements.txt:/requirements.txt
+    command: scheduler
+
+  airflow-init:
+    image: apache/airflow:2.7.3
+    entrypoint: bash -c "pip install --upgrade pip &&
+                        pip install -r /requirements.txt &&
+                        airflow db init"
+    volumes:
+      - ../../01_Data_Engineer_Portfolio:/opt/airflow
+      - ./requirements.txt:/requirements.txt
+
+

@@ -13,7 +13,7 @@ from Utils.helpers import error, info, debug
 # Ajoute le chemin vers le dossier parent de Utils
 sys.path.append(os.path.abspath(os.path.join("..", "..")))
 
-def getMovies(title : str ="Pokemon") -> pd.DataFrame :
+def getMovies(title : str ="Pokemon", OMDB_API_KEY = None) -> pd.DataFrame :
     """
     Retourne la liste de tous les films portant le nom passé en parametre
 
@@ -23,19 +23,21 @@ def getMovies(title : str ="Pokemon") -> pd.DataFrame :
         pd.DataFrame
     """
 
-    API_KEY = os.getenv("OMDB_API_KEY")
-    if not API_KEY : 
+    if OMDB_API_KEY == None:
+        OMDB_API_KEY = os.getenv("OMDB_API_KEY", None)
+
+    if OMDB_API_KEY == None : 
         info("OMDB_API_KEY has not been found")
         return pd.DataFrame([])
     
-    params = {"apikey": API_KEY, "s": title}
+    params = {"apikey": OMDB_API_KEY, "s": title}
     url = "https://www.omdbapi.com"
     df = []
     try:
         page = 1
         while True:
-            debug(f"Appel à url = {url}")
             params["page"] = str(page)
+            info(f"Appel à url = {url} avec param = {params}")
             response = requests.get(url, params)
 
             if response.status_code == requests.codes.ok :
@@ -45,6 +47,9 @@ def getMovies(title : str ="Pokemon") -> pd.DataFrame :
                 
                 if int(data["totalResults"]) == len(df):
                     break
+            else :
+                error(f"Request failed with : {response.status_code} : {response.text}")
+                break
     except Exception as e:
         error(f"Request failed with {e}")
         df = []
