@@ -37,7 +37,6 @@ def getMovies(title : str ="Pokemon", OMDB_API_KEY = None) -> pd.DataFrame :
         page = 1
         while True:
             params["page"] = str(page)
-            info(f"Appel à url = {url} avec param = {params}")
             response = requests.get(url, params)
 
             if response.status_code == requests.codes.ok :
@@ -161,7 +160,7 @@ def create_db(path) -> bool:
 
 
 if __name__ == "main":
-    info("Strat process")
+    info("Start process")
 
     # Extract All pokemon moovies
     df_moovies = getMovies()
