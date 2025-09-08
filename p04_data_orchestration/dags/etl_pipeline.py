@@ -8,7 +8,9 @@ import uuid
 from airflow.exceptions import AirflowFailException
 from airflow.models import Variable
 from google.oauth2 import service_account
-from google.cloud import storage
+from airflow.providers.google.cloud.sensors.gcs import GCSObjectUpdateSensor
+from datetime import datetime, timedelta
+
 import pandas as pd
 
 
@@ -19,13 +21,25 @@ from p01_data_ingestion.scripts.ingest_csv_to_gcs_s3 import save_text_to_gcs_buc
 from Utils.helpers import info
 
 
+
+def one_hour_ago(context):    
+    info(f"Context: {context}")
+    return datetime.now() - timedelta(hours=1)
+
+
 def getAllPokemonMovies():
+    """
+    Récupere Tous les films pokemon  sur omnidb
+    """
     pokemon_movies = getMovies(OMDB_API_KEY=Variable.get("OMDB_API_KEY"))
     info(str(pokemon_movies.head()))
     return pokemon_movies
 
 
 def get_GCP_CREDENTIALS_SECRET():
+    """
+    Retourne le credential de GCP
+    """
     creds_json = Variable.get("GCP_CREDENTIALS_SECRET")
     creds_dict = json.loads(creds_json)
     return service_account.Credentials.from_service_account_info(creds_dict)
@@ -38,16 +52,25 @@ def process_pokemon_api_response(**context):
     response_json = json.loads(response_text)
     text_content = json.dumps(response_json["results"], indent=2)
 
+    object_pokemon_list_name = f"pokemon_{uuid.uuid4()}.txt"
 
-    if not save_text_to_gcs_bucket(text_content, "pokemon.txt", credentials=get_GCP_CREDENTIALS_SECRET()) :
+    Variable.set("latest_object_pokemon_list_name", object_pokemon_list_name)
+    
+    info(f"object_pokemon_list_name={object_pokemon_list_name}")
+
+    if not save_text_to_gcs_bucket(text_content, object_pokemon_list_name, credentials=get_GCP_CREDENTIALS_SECRET()) :
         raise AirflowFailException("save_text_to_gcs_bucket failed")
 
 def process_pokemon_movies_api_response(ti):
     # Récupérer la réponse de l'appel API à pokemon depuis XCom   
- 
     df_movies = ti.xcom_pull(task_ids='get_moovies_task')
-    info(df_movies)
-    if not save_df_to_gcs_bucket(pd.DataFrame(df_movies), f"csv/movies_{uuid.uuid4()}.csv", credentials=get_GCP_CREDENTIALS_SECRET()):
+
+    object_movies_name = f"movies_{uuid.uuid4()}.csv"
+    Variable.set("latest_object_movies_name", object_movies_name)
+
+    info(f"object_movies_name={object_movies_name}")
+
+    if not save_df_to_gcs_bucket(pd.DataFrame(df_movies), object_name=object_movies_name, credentials=get_GCP_CREDENTIALS_SECRET()):
         raise AirflowFailException("save_text_to_gcs_bucket failed")
 
 # Creation de mon Dag
@@ -73,7 +96,7 @@ with DAG(dag_id="Pokemon_Story", default_args=default_arguments, schedule_interv
         do_xcom_push=True,
     )
 
-    # 2. Traitement de la réponse avec un PythonOperator
+    # 2. Traitement de la réponse process_pokemon_api_response avec un PythonOperator
     process_pokemon_api_data = PythonOperator(
         task_id="process_pokemon_api_data",
         python_callable=process_pokemon_api_response,
@@ -81,12 +104,39 @@ with DAG(dag_id="Pokemon_Story", default_args=default_arguments, schedule_interv
     )
 
 
-    # 2. Traitement de la réponse avec un PythonOperator
+    # 3. Traitement de la réponse process_pokemon_movies_api_response avec un PythonOperator
     process_immo_pokemon_data = PythonOperator(
         task_id="process_immo_pokemon_data",
         python_callable=process_pokemon_movies_api_response,
         provide_context=True,
     )
 
-    get_pokemon_data >> process_pokemon_api_data # type: ignore
-    get_moovies_task >> process_immo_pokemon_data # type: ignore
+    
+    # 4. Verification de l'existance ou la mise à jour des fichiers pokemon'
+    check_movies_pokemon_gcs_update = GCSObjectUpdateSensor(
+        task_id='check_movies_pokemon_gcs_update',
+        bucket='de-01-data-ingestion',
+        object=f"csv/{Variable.get('latest_object_movies_name', '')}",   
+        ts_func=one_hour_ago,
+        google_cloud_conn_id='google_cloud_default',
+        poke_interval=60,
+        timeout=1800,
+        mode='poke',
+        dag=dag
+    )
+
+    check_pokemon_list_gcs_update = GCSObjectUpdateSensor(
+        task_id='check_pokemon_list_gcs_update',
+        bucket='de-01-data-ingestion',        
+        object=f"text/{Variable.get('latest_object_pokemon_list_name', '')}",   
+        ts_func=one_hour_ago,
+        google_cloud_conn_id='google_cloud_default',
+        poke_interval=60,
+        timeout=1800,
+        mode='poke',
+        dag=dag
+    )
+
+
+    get_pokemon_data >> process_pokemon_api_data >> check_pokemon_list_gcs_update # type: ignore
+    get_moovies_task >> process_immo_pokemon_data >> check_movies_pokemon_gcs_update # type: ignore

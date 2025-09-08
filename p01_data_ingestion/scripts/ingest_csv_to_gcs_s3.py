@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join("..", "..")))
 
 
 
-def save_df_to_gcs_bucket(df: pd.DataFrame, object_name = "csv/movies.csv", credentials=None) -> bool:
+def save_df_to_gcs_bucket(df: pd.DataFrame, object_name: str, credentials=None) -> bool:
     """
     Stockage du DataFrame sur GCS
 
@@ -31,7 +31,7 @@ def save_df_to_gcs_bucket(df: pd.DataFrame, object_name = "csv/movies.csv", cred
         else :
             client = storage.Client()
         bucket = client.bucket(bucket_name)
-        blob = bucket.blob(object_name + str(uuid.uuid4()))
+        blob = bucket.blob(f"csv/{object_name}")
 
         # Upload CSV
         blob.upload_from_string(df.to_csv(index=False), content_type="text/csv")
@@ -86,6 +86,7 @@ if __name__ == "main":
     info("Extract Movies")
 
     # Save moovies in GCP
-    save_df_to_gcs_bucket(df_movies_raw)
+    object_name = "csv/movies.csv"
+    save_df_to_gcs_bucket(df_movies_raw, object_name)
 
     info("Fin du traitement")
