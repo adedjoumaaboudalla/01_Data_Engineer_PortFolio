@@ -55,4 +55,11 @@ build/
 dist/
 *.whl
 
+
+Utils/__pycache__/
+
 p04_data_orchestration/.env
+p02_data_transformation/.env
+p01_data_ingestion/.env
+
+p02_data_transformation/libs/gcs-connector-hadoop3-2.2.2-shaded.jar

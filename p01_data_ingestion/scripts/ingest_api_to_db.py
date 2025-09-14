@@ -1,17 +1,20 @@
-import os
-import sys
+import os, sys
 import pandas as pd
 import requests
 import logging
 import sqlite3
 import os
 import uuid
-
-from Utils.helpers import error, info, debug
+from google.cloud import bigquery
+from dotenv import load_dotenv
+import datetime
 
 
 # Ajoute le chemin vers le dossier parent de Utils
 sys.path.append(os.path.abspath(os.path.join("..", "..")))
+
+from Utils.helpers import error, info, debug
+
 
 def getMovies(title : str ="Pokemon", OMDB_API_KEY = None) -> pd.DataFrame :
     """
@@ -19,11 +22,13 @@ def getMovies(title : str ="Pokemon", OMDB_API_KEY = None) -> pd.DataFrame :
 
     Args:
         title(str): Le titre ou mot clé du film
+        OMDB_API_KEY(str): Api key
     Returns:
         pd.DataFrame
     """
 
     if OMDB_API_KEY == None:
+        load_dotenv(override=True)
         OMDB_API_KEY = os.getenv("OMDB_API_KEY", None)
 
     if OMDB_API_KEY == None : 
@@ -154,7 +159,44 @@ def create_db(path) -> bool:
 
     return True
 
+def sanitize_row(row):
+    return {
+        k: (str(v) if isinstance(v, (pd.Timestamp, datetime.datetime)) else v)
+        for k, v in row.items()
+    }
 
+def save_list_on_bigquery(data: pd.DataFrame, my_table: str, schema=None) -> bool:
+    """
+    Sauvegarde la liste en fichier json temporaire pour le charger via un job bigquery
+
+    Args:
+        data(pd.DataFrame): Tableau de donnée
+        my_table(str): Big query table name
+    
+        Return :
+            bool
+    """
+    temp_path = "temp.json"
+
+    data.to_json(temp_path, orient="records", lines=True, force_ascii=False)
+
+    client = bigquery.Client()
+    job_config = bigquery.LoadJobConfig(
+        source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
+        autodetect=(schema is None),
+    )
+    
+    if schema:
+        job_config.schema = schema
+    
+    with open(temp_path, "rb") as source_file:
+        job = client.load_table_from_file(source_file, my_table, job_config=job_config)
+
+    job.result()  # Attendre la fin du job
+    
+    # 4. Nettoyage du fichier temporaire
+    os.remove(temp_path)
+    return True
 
 
 
@@ -179,4 +221,4 @@ if __name__ == "main":
     sqlite_save(path, pokemons)
     info("Save pokemons in SQlite Data base")
 
-    info("Fin du traitement")
+    info("Process finished")
