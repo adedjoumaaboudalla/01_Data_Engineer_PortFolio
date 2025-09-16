@@ -9,13 +9,13 @@ Il regroupe plusieurs projets couvrant **l’ingestion, la transformation, l’o
 
 - **p01_Data_Ingestion** → collecte de données (CSV, API, bases SQL/NoSQL) et chargement vers DB, S3, GCS…  
 - **p02_Data_Transformation** → pipelines ETL avec Python/Pandas/PySpark.  
-- **p03_Data_Warehousing** → scripts SQL et modélisation de schémas pour Data Warehouse (BigQuery, Redshift, Snowflake).  
-- **p04_Data_Orchestration** → automatisation des pipelines avec Airflow et Prefect.  
-- **p05_BigData_Tech** → traitements distribués avec Spark et Hadoop.  
-- **p06_Cloud_Projects** → projets cloud (GCP Dataflow/BigQuery, AWS Glue/S3/Redshift).  
-- **p07_Data_Streaming** → ingestion et traitement temps réel avec Kafka, Spark Streaming.  
-- **p08_Monitoring_Logging** → monitoring, logs et alertes.  
-- **p09_Tests** → tests unitaires pour valider la fiabilité des pipelines.  
+- **p03_Data_Warehousing** 🚧  → scripts SQL et modélisation de schémas pour Data Warehouse (BigQuery, Redshift, Snowflake).  
+- **p04_Data_Orchestration** 🚧 → automatisation des pipelines avec Airflow et Prefect.  
+- **p05_BigData_Tech** 🚧 → traitements distribués avec Spark et Hadoop.  
+- **p06_Cloud_Projects** 🚧 → projets cloud (GCP Dataflow/BigQuery, AWS Glue/S3/Redshift).  
+- **p07_Data_Streaming** 🚧 → ingestion et traitement temps réel avec Kafka, Spark Streaming.  
+- **p08_Monitoring_Logging** 🚧 → monitoring, logs et alertes.  
+- **p09_Tests** 🚧 → tests unitaires pour valider la fiabilité des pipelines.  
 - **Utils** → fonctions utilitaires (connexion DB, logging, helpers).  
 
 ---
