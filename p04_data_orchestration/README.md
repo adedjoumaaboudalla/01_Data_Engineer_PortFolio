@@ -16,3 +16,5 @@ Ce dossier contient des exemples d’orchestration et d’automatisation de pipe
 - Automatisation de pipelines.
 - Orchestration avec Airflow et Prefect.
 - Gestion des dépendances et planification.
+
+<img width="1725" height="718" alt="Capture d'écran 2025-09-08 175527" src="https://github.com/user-attachments/assets/d4ce1326-40cc-4afd-9a91-3a40ac089b92" />
