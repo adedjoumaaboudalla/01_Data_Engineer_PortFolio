@@ -1,15 +1,17 @@
-Welcome to your new dbt project!
+# 📊 DBT pokemon
 
-### Using the starter project
+Ce dossier illustre comment mettre en place une **Architechture medaillon avec DBT**.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Contenu
+- **models/**
+  - `dbt_pokemon_movies.sql` → Extraction de tous les films pokemon.
+  - `dbt_pokemon_movies_silver.sql` → Nettoyage de la liste des films.
+  - `dbt_pokemon_movies_clean_pokemon_id.sql` → Liste des film liés à un pokemon
+  - `dbt_count_pokemon_by_country_gold.sql` → Agregation des film par pays.
 
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Compétences mises en avant
+- Creation d'un projet.
+- Connexion à bigquery
+- Création de models
+- Execution de model
+- Execution des tests
