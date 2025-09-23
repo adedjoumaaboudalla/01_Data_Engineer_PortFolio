@@ -1,0 +1,14 @@
+# Modify the project name
+pokemon_dbt:
+  outputs:
+    dev:
+      # Change the database type
+      type: sqlite
+      threads: 1
+      database: "{{ env_var('DBT_SQLITE_PATH', 'pokemon.db') }}"
+      schema: main
+      schema_directory: "{{ env_var('DBT_SQLITE_SCHEMA_DIR', 'schemas') }}"
+      schemas_and_paths:
+        main: "{{ env_var('DBT_SQLITE_PATH', 'pokemon.db') }}"
+
+  target: dev

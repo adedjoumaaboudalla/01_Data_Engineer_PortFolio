@@ -1,0 +1,12 @@
+pokemon_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dataengineer-471201
+      dataset: pokemon_ds
+      threads: 1
+      keyfile: "{{ env_var('DBT_BIGQUERY_KEYFILE') }}"
+      timeout_seconds: 300
+      location: EUROPE-WEST9
