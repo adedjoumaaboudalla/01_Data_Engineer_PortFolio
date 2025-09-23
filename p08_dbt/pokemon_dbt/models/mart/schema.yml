@@ -1,0 +1,13 @@
+
+version: 2
+
+models:
+  - name: dbt_count_pokemon_by_country
+    description: "Liste des films pokemon lié à un pokemon" 
+    columns:
+      - name: Country
+        description: "Le pays de sortie"
+      - name: movies_count
+        description: "Le nombre de film par pays"
+        tests:
+          - is_positif

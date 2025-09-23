@@ -1,0 +1,26 @@
+
+version: 2
+
+models:
+  - name: dbt_pokemon_movies
+    description: "Liste des films pokemon"
+    columns:
+      - name: imdbID
+        description: "La clé primaire de la table"
+        data_tests:
+          - unique
+          - not_null
+      - name: Title
+        description: "Le titre du film pokemon"
+      - name: Released
+        description: "La date de sortie"
+      - name: Type
+        description: "Le type ou genre du film"
+      - name: Country
+        description: "Le pays de sortie"
+      - name: Ratings
+        description: "La note du film"
+      - name: TotalSeasons
+        description: "Le nombre de saison"
+      - name: pokemon_id
+        description: "l'id du pokemon lié au film"
