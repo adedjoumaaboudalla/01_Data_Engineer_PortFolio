@@ -14,7 +14,7 @@ Il regroupe plusieurs projets couvrant **l’ingestion, la transformation, l’o
 - **p05_BigData_Tech** 🚧 → traitements distribués avec Spark et Hadoop.  
 - **p06_Cloud_Projects** 🚧 → projets cloud (GCP Dataflow/BigQuery, AWS Glue/S3/Redshift).  
 - **p07_Data_Streaming** 🚧 → ingestion et traitement temps réel avec Kafka, Spark Streaming.  
-- **p08_DBT** → Modeling, Transforming. 
+- **p08_DBT** → Modeling, Transforming, Test. 
 - **p09_Machine_learning** 🚧 → Feature engineering et construction d'un modele d'apprentissage. 
 - **p10_Monitoring_Logging** 🚧 → monitoring, logs et alertes.  
 - **p11_Tests** 🚧 → tests unitaires pour valider la fiabilité des pipelines.  
