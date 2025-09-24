@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: dbt_count_pokemon_by_country
+  - name: count_pokemon_by_country_gold
     description: "Liste des films pokemon lié à un pokemon" 
     columns:
       - name: Country

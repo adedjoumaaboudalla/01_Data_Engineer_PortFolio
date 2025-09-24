@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: dbt_pokemon_movies_clean_pokemon_id
+  - name: pokemon_movies_clean_pokemon_id
     description: "Liste des films pokemon lié à un pokemon" 
     columns:
       - name: imdbID
@@ -30,7 +30,7 @@ models:
           - not_null
 
 
-  - name: dbt_pokemon_movies_silver
+  - name: pokemon_movies_silver
     description: "Liste des films pokemon nettoyé"
     columns:
       - name: imdbID
