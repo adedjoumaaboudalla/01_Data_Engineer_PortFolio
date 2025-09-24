@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='ephemeral', schema='dbt_pokemon') }}
 
 with source_data as (
 
@@ -10,3 +10,5 @@ with source_data as (
 select *
 from source_data
 where imdbID is not null
+
+

@@ -52,3 +52,43 @@ models:
         description: "Le nombre de saison"
       - name: pokemon_id
         description: "l'id du pokemon lié au film"
+
+
+
+  - name: pokemon_list_silver
+    columns: 
+      - name: id
+        tests: 
+          - not_null
+      - name: abilities
+        description: "La liste des capacités du pokemon"
+      - name: base_experience
+        description: "L'experience de base"
+      - name: cries
+        description: "La liste des cries"
+      - name: forms
+        description: "La liste des formes"
+      - name: game_indices
+        description: "Les indices"
+      - name: height
+        description: "La taille"
+      - name: items
+        description: "Les éléments en sa possession"
+      - name: is_default
+        description: "Le pokemon par défaut"
+      - name: location_area_encounters
+        description: "Les emplacements"
+      - name: name
+        description: "Le nom"
+      - name: order
+        description: "La position dans la liste"
+      - name: spicies
+        description: "La liste de'espece"
+      - name: stats
+        description: "Les stats"
+      - name: types
+        description: "Le types"
+      - name: weight
+        description: "Le poids"
+
+
