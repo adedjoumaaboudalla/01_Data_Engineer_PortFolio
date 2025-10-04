@@ -16,8 +16,9 @@ Il regroupe plusieurs projets couvrant **l’ingestion, la transformation, l’o
 - **p07_Data_Streaming** 🚧 → ingestion et traitement temps réel avec Kafka, Spark Streaming.  
 - **p08_DBT** → Modeling, Transforming, Test. 
 - **p09_Machine_learning** 🚧 → Feature engineering et construction d'un modele d'apprentissage. 
-- **p10_Monitoring_Logging** 🚧 → monitoring, logs et alertes.  
-- **p11_Tests** 🚧 → tests unitaires pour valider la fiabilité des pipelines.  
+- **p10_spark_transformation** 🚧 → Transformation ETL spark.  
+- **p11_Monitoring_Logging** 🚧 → monitoring, logs et alertes.  
+- **p12_Tests** 🚧 → tests unitaires pour valider la fiabilité des pipelines.  
 - **Utils** → fonctions utilitaires (connexion DB, logging, helpers).  
 
 ---
