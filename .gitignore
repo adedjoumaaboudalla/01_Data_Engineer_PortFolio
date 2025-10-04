@@ -6,16 +6,6 @@ airflow.db
 .env                # Variables d’environnement
 *.key               # Clés Fernet, SSH…
 
-# 🐍 Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-*.log
-*.sqlite3
-*.db
-*.bak
-*.pyc
-
 
 # 📦 Environnements virtuels
 venv/
@@ -64,3 +54,17 @@ p01_data_ingestion/.env
 
 p02_data_transformation/libs/gcs-connector-hadoop3-2.2.2-shaded.jar
 p04_data_orchestration/libs/gcs-connector-hadoop3-2.2.2-shaded.jar
+
+p01_data_ingestion/scripts/__pycache__/
+p04_data_orchestration/dags/__pycache__/
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+*.sqlite3
+*.db
+*.bak
+*.pyc
+*.jar
