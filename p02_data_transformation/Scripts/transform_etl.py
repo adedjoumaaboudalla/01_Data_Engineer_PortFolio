@@ -4,6 +4,8 @@ import os, sys
 from dotenv import load_dotenv
 from google.cloud import bigquery
 import copy
+from typing import Optional
+import numpy as np
 
 
 
@@ -100,7 +102,7 @@ def transform_pokemon(spark: SparkSession, csv_file="movies.csv", text_file="pok
     return (pokemon_movie_df, pokemons_df, pokemons_movies, pokemons)
 
 
-def get_pokemon(imdbId: str, OMDB_API_KEY = None) -> dict | None:
+def get_pokemon(imdbId: str, OMDB_API_KEY = None) ->  Optional[dict]:
     """
     Get All pokemon movie information
     
@@ -136,26 +138,30 @@ def get_pokemon(imdbId: str, OMDB_API_KEY = None) -> dict | None:
     return data
 
 
-def get_spark_config():
+def get_spark_config(gcs_connector_path="..\\libs\\gcs-connector-hadoop3-2.2.2-shaded.jar"):
     """
         Load Env variables and config spark session
         
         Return :
             SparkSession
     """
-    load_dotenv(override=True)
+    if os.getenv("AIRFLOW_HOME") is None:  # on est hors Airflow
+        load_dotenv(override=True)
+        
     creds_json = os.getenv("GCP_CREDENTIALS_SECRET")
 
     assert creds_json is not None
+
+    info(f"creds_json = {creds_json}")
     assert os.path.exists(creds_json)
 
-    gcs_jar_path = os.path.abspath("..\\libs\\gcs-connector-hadoop3-2.2.2-shaded.jar")
+    gcs_jar_path = os.path.abspath(gcs_connector_path)
     assert os.path.exists(gcs_jar_path), f"Fichier JAR introuvable : {gcs_jar_path}"
 
 
     PYSPARK_PYTHON = os.getenv("PYSPARK_PYTHON")
     PYSPARK_DRIVER_PYTHON = os.getenv("PYSPARK_DRIVER_PYTHON")
-    HADOOP_HOME = os.getenv("HADOODP_HOME")
+    HADOOP_HOME = os.getenv("HADOOP_HOME")
 
     assert PYSPARK_PYTHON is not None
     assert PYSPARK_DRIVER_PYTHON is not None
@@ -180,6 +186,10 @@ def get_spark_config():
 
 
 def change_rating_value(ratings):
+
+    if isinstance(ratings, np.ndarray):
+        ratings = ratings.tolist()
+
     if not isinstance(ratings, list):
         return ratings
     
@@ -252,10 +262,17 @@ def pokemon_movies_cleaning(movies_list: pd.DataFrame) -> pd.DataFrame:
     
 
     df = df.fillna("None")
-    df.replace(["NaN", "N/A", "None", "nan"], None, inplace=True)
+    mask = df.isin(["NaN", "N/A", "None", "nan"])
+    df = df.where(~mask, None)
+
     df = df.where(pd.notnull(df), None)
     
     df["Ratings"] = df["Ratings"].apply(change_rating_value)
+    
+    info(f"{df.columns.tolist()}")
+    info("Diagnostic avant cast Ratings:")
+    info(str(df["Ratings"].apply(type).value_counts())) # type: ignore
+
     df["Ratings"] = df["Ratings"].astype("float64")
 
     df["Released"] = pd.to_datetime(df["Released"], format="%d %b %Y", errors="coerce")
@@ -274,7 +291,9 @@ def pokemons_cleaning(pokemon_list: pd.DataFrame) -> pd.DataFrame:
     
     df = copy.deepcopy(pokemon_list)
     df = df.fillna("None")
-    df.replace(["NaN", "N/A", "None", "nan"], None, inplace=True)
+    mask = df.isin(["NaN", "N/A", "None", "nan"])
+    df = df.where(~mask, None)
+
     df = df.where(pd.notnull(df), None)
 
     
@@ -322,6 +341,16 @@ def get_pokemons_schema(df: pd.DataFrame) :
         bigquery.SchemaField("is_default", "BOOLEAN"),
         bigquery.SchemaField("base_experience", "INTEGER"),
         bigquery.SchemaField("height", "FLOAT"),
+        bigquery.SchemaField("forms", "RECORD", mode="REPEATED", fields=[
+            bigquery.SchemaField("name", "STRING"),
+            bigquery.SchemaField("url", "STRING"),
+        ]),
+        bigquery.SchemaField("held_items", "RECORD", mode="REPEATED", fields=[
+            bigquery.SchemaField("item", "RECORD", fields=[
+                bigquery.SchemaField("name", "STRING"),
+                bigquery.SchemaField("url", "STRING"),
+            ]),
+        ]),
         bigquery.SchemaField("game_indices", "RECORD", mode="REPEATED", fields=[
             bigquery.SchemaField("game_index", "INTEGER"),
             bigquery.SchemaField("version","RECORD", mode="NULLABLE", fields=[

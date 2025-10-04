@@ -2,7 +2,7 @@
 import logging
 
 from google.cloud import bigquery
-import pandas as pd
+from typing import List, Optional
 
 
 
@@ -34,7 +34,7 @@ def debug(msg: str):
     """
     logging.debug(msg)
 
-def infer_bq_type_from_value(value, df=None, col=None, checked_rows=100):
+def infer_bq_type_from_value(value, df=None, col=None):
     from google.cloud import bigquery
     
     # Cas None
@@ -78,7 +78,7 @@ def infer_bq_type_from_value(value, df=None, col=None, checked_rows=100):
     return bigquery.SchemaField(str(col), "STRING", mode="NULLABLE")
 
 
-def generate_bq_schema_from_df(df, override_schema: list[bigquery.SchemaField] = []) -> list:
+def generate_bq_schema_from_df(df, override_schema: Optional[List[bigquery.SchemaField]]) -> List:
     """
     Génère un schéma BigQuery à partir d'un DataFrame Pandas.
     - Si une colonne est dans overrides -> on prend le SchemaField fourni tel quel.
@@ -86,10 +86,10 @@ def generate_bq_schema_from_df(df, override_schema: list[bigquery.SchemaField] =
 
     Args:
         df(pd.DataFrame): Le dataFrame à analyser
-        override_schema(list): Le schema surchargé
+        override_schema(List): Le schema surchargé
     
     Return:
-        list
+        List
     """
     schema = []
     overrides = {field.name: field for field in override_schema} if override_schema else {} 

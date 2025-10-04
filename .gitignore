@@ -63,3 +63,4 @@ p02_data_transformation/.env
 p01_data_ingestion/.env
 
 p02_data_transformation/libs/gcs-connector-hadoop3-2.2.2-shaded.jar
+p04_data_orchestration/libs/gcs-connector-hadoop3-2.2.2-shaded.jar
