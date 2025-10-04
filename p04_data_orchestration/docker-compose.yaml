@@ -1,16 +1,24 @@
 services:
   airflow-webserver:
-    image: apache/airflow:2.7.3  # <-- prends une version stable !
+    build: .
+    image: airflow-custom:latest # <-- prends une version stable !
     restart: always
     environment:
       - PYTHONPATH=/opt/airflow
+      - "GCP_CREDENTIALS_SECRET=/opt/airflow/keys/Spark-GCS-key.json"
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/Spark-GCS-key.json 
       - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
       - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/p04_data_orchestration/dags
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
       - AIRFLOW__CORE__TEST_CONNECTION=Enabled
+      - PYSPARK_PYTHON=/usr/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+      - HADOOP_HOME=/opt/airflow/hadoop
     volumes:
       - ../../01_Data_Engineer_Portfolio:/opt/airflow
       - ./requirements.txt:/requirements.txt
+      - ../../../Spark-GCS-key.json:/opt/airflow/keys/Spark-GCS-key.json
+      - ./libs:/opt/airflow/libs
     ports:
       - "8080:8080"
     env_file:
@@ -18,25 +26,34 @@ services:
     command: webserver
 
   airflow-scheduler:
-    image: apache/airflow:2.7.3
+    build: .
+    image: airflow-custom:latest
     restart: always
     depends_on:
       - airflow-webserver
     environment:      
       - PYTHONPATH=/opt/airflow
+      - "GCP_CREDENTIALS_SECRET=/opt/airflow/keys/Spark-GCS-key.json"
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/Spark-GCS-key.json 
       - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
       - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/p04_data_orchestration/dags
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
       - AIRFLOW__CORE__TEST_CONNECTION=Enabled
+      - PYSPARK_PYTHON=/usr/bin/python3
+      - PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+      - HADOOP_HOME=/opt/airflow/hadoop
     volumes:
       - ../../01_Data_Engineer_Portfolio:/opt/airflow
       - ./requirements.txt:/requirements.txt
+      - ../../../Spark-GCS-key.json:/opt/airflow/keys/Spark-GCS-key.json
+      - ./libs:/opt/airflow/libs
     env_file:
       - .env
     command: scheduler
 
   airflow-init:
-    image: apache/airflow:2.7.3
+    build: .
+    image: airflow-custom:latest
     entrypoint: bash -c "pip install --upgrade pip &&
                         pip install -r /requirements.txt &&
                         airflow db init"

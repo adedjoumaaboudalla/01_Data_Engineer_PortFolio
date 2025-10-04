@@ -8,6 +8,8 @@ import uuid
 from google.cloud import bigquery
 from dotenv import load_dotenv
 import datetime
+import numpy as np
+import json
 
 
 # Ajoute le chemin vers le dossier parent de Utils
@@ -165,6 +167,20 @@ def sanitize_row(row):
         for k, v in row.items()
     }
 
+
+def make_jsonable(x):
+    if isinstance(x, np.ndarray):
+        return x.tolist()
+    elif isinstance(x, (np.int64, np.float64)): # type: ignore
+        return x.item()
+    elif isinstance(x, dict):
+        return {k: make_jsonable(v) for k, v in x.items()}
+    elif isinstance(x, list):
+        return [make_jsonable(v) for v in x]
+    else:
+        return x
+    
+
 def save_list_on_bigquery(data: pd.DataFrame, my_table: str, schema=None) -> bool:
     """
     Sauvegarde la liste en fichier json temporaire pour le charger via un job bigquery
@@ -178,11 +194,14 @@ def save_list_on_bigquery(data: pd.DataFrame, my_table: str, schema=None) -> boo
     """
     temp_path = "temp.json"
 
+    data = data.applymap(make_jsonable) # type: ignore
+    
     data.to_json(temp_path, orient="records", lines=True, force_ascii=False)
 
     client = bigquery.Client()
     job_config = bigquery.LoadJobConfig(
         source_format=bigquery.SourceFormat.NEWLINE_DELIMITED_JSON,
+        ignore_unknown_values=True,
         autodetect=(schema is None),
     )
     
@@ -192,9 +211,22 @@ def save_list_on_bigquery(data: pd.DataFrame, my_table: str, schema=None) -> boo
     with open(temp_path, "rb") as source_file:
         job = client.load_table_from_file(source_file, my_table, job_config=job_config)
 
-    job.result()  # Attendre la fin du job
     
-    # 4. Nettoyage du fichier temporaire
+    # Attend la fin du job BigQuery
+    try:
+        job.result()  # bloque jusqu’à la fin du chargement
+        info(f"✅ Upload terminé : {job.output_rows} lignes chargées dans {my_table}")
+    except Exception as e:
+        error(f"❌ Erreur BigQuery : {e}")
+    
+    info("Fin de l'attente du job BigQuery :")
+    if job.errors:
+        info("Détails des erreurs BigQuery :")
+        for err in job.errors:
+            error(json.dumps(err, indent=2, ensure_ascii=False))
+        return False
+
+    # Nettoyage du fichier temporaire
     os.remove(temp_path)
     return True
 
